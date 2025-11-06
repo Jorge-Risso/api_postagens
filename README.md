@@ -40,7 +40,6 @@ Este projeto é uma **API RESTful** construída com **Laravel 12**, utilizando *
 git clone https://github.com/Jorge-Risso/api_postagens.git
 cd api_postagens
 
-
 composer install
 
 ```
@@ -73,22 +72,23 @@ Gere o segredo do JWT:
 php artisan jwt:secret
 ```
 
-Rode as migrations para criar as tabelas do banco:
+## Rode as migrations para criar as tabelas do banco:
 ```bash
 php artisan migrate
 ```
 
-Inicie o servidor local:
+## Inicie o servidor local:
 ```bash
 php artisan serve
 
 ```
 
-Rotas da API
+## Rotas da API
 
 Prefixo: /api/v1
 
 Autenticação
+```bash
 Método	Rota	Descrição
 POST	/register	Registrar usuário
 POST	/login	Login do usuário
@@ -101,9 +101,9 @@ GET	/posts/{id}	Visualizar um post específico	Não
 POST	/posts	Criar novo post	Sim
 PUT	/posts/{id}	Atualizar post existente	Sim
 DELETE	/posts/{id}	Deletar post	Sim
+```
 
-
-Exemplo de Requisições
+##Exemplo de Requisições
 
 Registro
 
@@ -119,5 +119,5 @@ Content-Type: application/json
     "password_confirmation": "123456"
 }
 
-
+```
 
