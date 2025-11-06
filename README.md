@@ -46,13 +46,13 @@ composer install
 ```
 
 
-Configure o arquivo .env:
-
-APP_NAME="API Blog"
-APP_URL=http://127.0.0.1:8000
+## Configure o arquivo .env:
+```bash
+APP_NAME=
+APP_URL=
 
 DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
+DB_HOST=
 DB_PORT=3306
 DB_DATABASE=nome_do_banco
 DB_USERNAME=usuario
@@ -60,20 +60,26 @@ DB_PASSWORD=senha
 
 JWT_SECRET=
 
+````
+
+## Gere a chave da aplicação Laravel:
 
 ```bash
-
-Gere a chave da aplicação Laravel:
 php artisan key:generate
 
+```
 Gere o segredo do JWT:
+```bash
 php artisan jwt:secret
+```
 
 Rode as migrations para criar as tabelas do banco:
+```bash
 php artisan migrate
+```
 
 Inicie o servidor local:
-
+```bash
 php artisan serve
 
 ```
@@ -96,10 +102,12 @@ POST	/posts	Criar novo post	Sim
 PUT	/posts/{id}	Atualizar post existente	Sim
 DELETE	/posts/{id}	Deletar post	Sim
 
-```bash
+
 Exemplo de Requisições
 
 Registro
+
+```bash
 
 POST /api/v1/register
 Content-Type: application/json
