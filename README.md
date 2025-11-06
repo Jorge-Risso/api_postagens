@@ -41,3 +41,75 @@ git clone https://github.com/Jorge-Risso/api_postagens.git
 cd api_postagens
 
 
+composer install
+
+```
+
+
+Configure o arquivo .env:
+
+APP_NAME="API Blog"
+APP_URL=http://127.0.0.1:8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nome_do_banco
+DB_USERNAME=usuario
+DB_PASSWORD=senha
+
+JWT_SECRET=
+
+
+```bash
+
+Gere a chave da aplicação Laravel:
+php artisan key:generate
+
+Gere o segredo do JWT:
+php artisan jwt:secret
+
+Rode as migrations para criar as tabelas do banco:
+php artisan migrate
+
+Inicie o servidor local:
+
+php artisan serve
+
+```
+
+Rotas da API
+
+Prefixo: /api/v1
+
+Autenticação
+Método	Rota	Descrição
+POST	/register	Registrar usuário
+POST	/login	Login do usuário
+POST	/logout	Logout do usuário
+GET	/profile	Perfil do usuário logado
+Posts
+Método	Rota	Descrição	Autenticação
+GET	/posts	Listar posts com paginação	Não
+GET	/posts/{id}	Visualizar um post específico	Não
+POST	/posts	Criar novo post	Sim
+PUT	/posts/{id}	Atualizar post existente	Sim
+DELETE	/posts/{id}	Deletar post	Sim
+
+```bash
+Exemplo de Requisições
+
+Registro
+
+POST /api/v1/register
+Content-Type: application/json
+
+{
+    "name": "Teste Teste",
+    "email": "teste@teste.com",
+    "password": "123456",
+    "password_confirmation": "123456"
+}
+
+
+
